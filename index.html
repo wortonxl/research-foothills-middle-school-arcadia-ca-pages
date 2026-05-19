@@ -222,13 +222,12 @@
     .stat strong { font-size: 1.8rem; letter-spacing: -0.03em; }
     .stat span { color: var(--muted); }
 
-    /* Content sections */
+    /* Content sections — 10 color slots, rotate for >10 */
     .section {
       margin: 30px 0;
       padding: 24px;
       border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid var(--border);
+      border-left: 4px solid var(--border);
     }
 
     .section h2 {
@@ -243,6 +242,38 @@
       margin: 20px 0 10px;
       font-size: 1.1rem;
     }
+
+    /* Section color slots — matches TOC colors */
+    #section-1  { background: #d9eae0; border-left-color: #2d6a4f; }
+    #section-2  { background: #dde6e7; border-left-color: #1d3557; }
+    #section-3  { background: #e4eff7; border-left-color: #457b9d; }
+    #section-4  { background: #d7dfe4; border-left-color: #4a4e69; }
+    #section-5  { background: #f6e9e5; border-left-color: #9d4edd; }
+    #section-6  { background: #dde0e2; border-left-color: #6c757d; }
+    #section-7  { background: #e1f4e8; border-left-color: #40916c; }
+    #section-8  { background: #f0e6f5; border-left-color: #7b2cbf; }
+    #section-9  { background: #fff2d9; border-left-color: #d4a373; }
+    #section-10 { background: #e8f0f7; border-left-color: #5c677d; }
+
+    /* Sub-section cards — lighter shade of parent section */
+    .sub-section {
+      background: rgba(255,255,255,0.5);
+      border-left: 3px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin: 14px 0;
+    }
+
+    #section-1  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #2d6a4f; }
+    #section-2  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #1d3557; }
+    #section-3  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #457b9d; }
+    #section-4  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #4a4e69; }
+    #section-5  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #9d4edd; }
+    #section-6  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #6c757d; }
+    #section-7  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #40916c; }
+    #section-8  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #7b2cbf; }
+    #section-9  .sub-section { background: rgba(255,255,255,0.55); border-left-color: #d4a373; }
+    #section-10 .sub-section { background: rgba(255,255,255,0.55); border-left-color: #5c677d; }
 
     .section ul, .section ol { margin: 0; padding-left: 18px; }
     .section li { margin: 10px 0; }
@@ -312,7 +343,7 @@
     <aside class="sidebar">
       <h3 class="toc-title">Contents</h3>
       <ul class="toc-list">
-        <li class="toc-item"><a href="#corroborated-findings-both-sources-agree" class="toc-link">Corroborated Findings (both sources agree)</a></li>
+        <li class="toc-item"><a href="#section-1" class="toc-link">Corroborated Findings (both sources agree)</a></li>
 <li class="toc-subitem"><a href="#basic-facts" class="toc-sublink">Basic Facts</a></li>
 <li class="toc-subitem"><a href="#enrollment-demographics" class="toc-sublink">Enrollment & Demographics</a></li>
 <li class="toc-subitem"><a href="#national-blue-ribbon-school" class="toc-sublink">National Blue Ribbon School</a></li>
@@ -320,23 +351,23 @@
 <li class="toc-subitem"><a href="#gifted-talented-program" class="toc-sublink">Gifted & Talented Program</a></li>
 <li class="toc-subitem"><a href="#accreditation-ausd-context" class="toc-sublink">Accreditation & AUSD Context</a></li>
 <li class="toc-subitem"><a href="#facilities" class="toc-sublink">Facilities</a></li>
-<li class="toc-item"><a href="#additional-from-grok-search" class="toc-link">Additional from Grok Search</a></li>
+<li class="toc-item"><a href="#section-2" class="toc-link">Additional from Grok Search</a></li>
 <li class="toc-subitem"><a href="#leadership" class="toc-sublink">Leadership</a></li>
 <li class="toc-subitem"><a href="#enrollment-detail" class="toc-sublink">Enrollment Detail</a></li>
 <li class="toc-subitem"><a href="#rankings-recent" class="toc-sublink">Rankings (Recent)</a></li>
 <li class="toc-subitem"><a href="#programs-extracurriculars" class="toc-sublink">Programs & Extracurriculars</a></li>
 <li class="toc-subitem"><a href="#reviews" class="toc-sublink">Reviews</a></li>
-<li class="toc-item"><a href="#additional-from-perplexity" class="toc-link">Additional from Perplexity</a></li>
+<li class="toc-item"><a href="#section-3" class="toc-link">Additional from Perplexity</a></li>
 <li class="toc-subitem"><a href="#historical-academic-milestones" class="toc-sublink">Historical Academic Milestones</a></li>
 <li class="toc-subitem"><a href="#facilities-fault-line-discovery" class="toc-sublink">Facilities — Fault Line Discovery</a></li>
 <li class="toc-subitem"><a href="#district-founding-date" class="toc-sublink">District Founding Date</a></li>
 <li class="toc-subitem"><a href="#community-involvement" class="toc-sublink">Community Involvement</a></li>
-<li class="toc-item"><a href="#contradictions-discrepancies" class="toc-link">Contradictions / Discrepancies</a></li>
-<li class="toc-item"><a href="#sources" class="toc-link">SOURCES</a></li>
+<li class="toc-item"><a href="#section-4" class="toc-link">Contradictions / Discrepancies</a></li>
+<li class="toc-item"><a href="#section-5" class="toc-link">SOURCES</a></li>
 <li class="toc-subitem"><a href="#from-grok-search" class="toc-sublink">From Grok Search:</a></li>
 <li class="toc-subitem"><a href="#from-perplexity" class="toc-sublink">From Perplexity:</a></li>
-<li class="toc-item"><a href="#confidence-high" class="toc-link">CONFIDENCE: High</a></li>
-<li class="toc-item"><a href="#gaps" class="toc-link">GAPS</a></li>
+<li class="toc-item"><a href="#section-6" class="toc-link">CONFIDENCE: High</a></li>
+<li class="toc-item"><a href="#section-7" class="toc-link">GAPS</a></li>
       </ul>
     </aside>
 
@@ -345,11 +376,11 @@
         <section class="hero">
           <div class="eyebrow">Research Report</div>
           <h1>Foothills Middle School, Arcadia CA</h1>
-          <p class="lede">Research on Foothills Middle School — a 2022 National Blue Ribbon School in Arcadia Unified School District</p>
+          <p class="lede">A 2022 National Blue Ribbon School in Arcadia Unified — high academic performance, strong API scores, and a majority Asian student body</p>
           <div class="grid cols-3 section">
             <div class="card stat">
               <strong>641</strong>
-              <span>Students Enrolled</span>
+              <span>Students (6-8)</span>
             </div>
             <div class="card stat">
               <strong>63%</strong>
@@ -357,14 +388,16 @@
             </div>
             <div class="card stat">
               <strong>2022</strong>
-              <span>Blue Ribbon Year</span>
+              <span>Blue Ribbon Award</span>
             </div>
           </div>
         </section>
 
-        <section id="corroborated-findings-both-sources-agree" class="section">
+        <section id="section-1" class="section">
 <h2>Corroborated Findings (both sources agree)</h2>
+<div class="sub-section" id="basic-facts">
 <h3>Basic Facts</h3>
+</div>
 <ul>
 <li>Public middle school serving <strong>grades 6–8</strong> in <strong>Arcadia, California</strong>.</li>
 <li>Part of the <strong>Arcadia Unified School District (AUSD)</strong>.</li>
@@ -372,7 +405,9 @@
 <li>Website: fh.ausd.net.</li>
 <li>(Sources: grok + perplexity)</li>
 </ul>
+<div class="sub-section" id="enrollment-demographics">
 <h3>Enrollment &amp; Demographics</h3>
+</div>
 <ul>
 <li>Enrollment: approximately <strong>641–684 students</strong> (Grok: 641 CDE 2025-26, ~650-684 other sources; Perplexity: ~684).</li>
 <li><strong>Majority Asian</strong>: ~63–64% (Grok: 63-64%; Perplexity: 429 students, ~63%).</li>
@@ -382,42 +417,57 @@
 <li>Small percentages Black/African American, American Indian, Pacific Islander.</li>
 <li>(Sources: grok + perplexity)</li>
 </ul>
+<div class="sub-section" id="national-blue-ribbon-school">
 <h3>National Blue Ribbon School</h3>
+</div>
 <ul>
 <li>Named a <strong>2022 National Blue Ribbon School</strong> by the U.S. Department of Education — one of few in California — recognizing strong overall academic performance and success in closing achievement gaps.</li>
 <li>(Sources: grok + perplexity)</li>
 </ul>
+<div class="sub-section" id="academic-performance">
 <h3>Academic Performance</h3>
+</div>
 <ul>
 <li>Historically high-performing with strong proficiency rates.</li>
 <li><strong>API of 977</strong> (2012–2013) — Perplexity; Grok confirms long history of top API rankings (#1 tied among LA County middle schools on older measures).</li>
 <li>Strong CAASPP/Smarter Balanced performance: ~70–75% proficient in math, ~75% in reading/ELA, well above state averages.</li>
 <li>(Sources: grok + perplexity)</li>
 </ul>
+<div class="sub-section" id="gifted-talented-program">
 <h3>Gifted &amp; Talented Program</h3>
+</div>
 <ul>
 <li>Offers a Gifted &amp; Talented (GATE) program.</li>
 <li>(Sources: grok + perplexity)</li>
 </ul>
+<div class="sub-section" id="accreditation-ausd-context">
 <h3>Accreditation &amp; AUSD Context</h3>
+</div>
 <ul>
 <li>AUSD ranks in the <strong>top 1% of U.S. school districts</strong> according to Niche.</li>
 <li>All AUSD schools recognized as California Distinguished Schools.</li>
 <li>(Sources: grok + perplexity)</li>
 </ul>
+<div class="sub-section" id="facilities">
 <h3>Facilities</h3>
+</div>
 <ul>
 <li>Includes classrooms, science labs, music building, multipurpose room, library, computer lab.</li>
 <li>Part of past bond-funded improvements.</li>
 <li>(Sources: grok + perplexity)</li>
 </ul>
-<section id="additional-from-grok-search" class="section">
+</section>
+<section id="section-2" class="section">
 <h2>Additional from Grok Search</h2>
+<div class="sub-section" id="leadership">
 <h3>Leadership</h3>
+</div>
 <ul>
 <li><strong>Principal</strong>: Dr. Benjamin Acker.</li>
 </ul>
+<div class="sub-section" id="enrollment-detail">
 <h3>Enrollment Detail</h3>
+</div>
 <ul>
 <li><strong>Student-teacher ratio</strong>: ~24:1.</li>
 <li>~29 full-time teachers.</li>
@@ -425,13 +475,17 @@
 <li>~29% economically disadvantaged.</li>
 <li>~8.6% English Learners (~55 students; Perplexity says 62 / 9.1% — close but slightly different).</li>
 </ul>
+<div class="sub-section" id="rankings-recent">
 <h3>Rankings (Recent)</h3>
+</div>
 <ul>
 <li><strong>Niche</strong>: A+ overall, A in academics; <strong>#34 Best Public Middle Schools in California</strong> (out of ~2,749); #29 in CA for best public middle school teachers.</li>
 <li><strong>U.S. News &amp; World Report</strong>: #107 in California middle schools; #2–3 within Arcadia USD; overall score 95.33/100.</li>
 <li><strong>Chronic absenteeism</strong>: Low; daily attendance ~95%.</li>
 </ul>
+<div class="sub-section" id="programs-extracurriculars">
 <h3>Programs &amp; Extracurriculars</h3>
+</div>
 <ul>
 <li><strong>AVID</strong> (Advancement Via Individual Determination): College-readiness elective supporting motivated students in the academic middle.</li>
 <li><strong>District-wide initiatives</strong>: Mental health support (full-time counselors), "The Leader in Me" character education, restorative practices, social-emotional learning.</li>
@@ -439,33 +493,45 @@
 <li><strong>Electives</strong>: Arts, music, STEM, physical education, leadership, broadcast/media, science-oriented activities.</li>
 <li><strong>Athletics</strong>: Offered as part of physical development focus and AUSD offerings (specific teams vary).</li>
 </ul>
+<div class="sub-section" id="reviews">
 <h3>Reviews</h3>
+</div>
 <ul>
 <li>Niche reviews average ~3.6/5 — mixed but generally positive on academics and teachers; some note competitiveness.</li>
 <li>Teachers receive A+ grade on Niche for care and classroom management; high teacher salaries noted.</li>
 </ul>
-<section id="additional-from-perplexity" class="section">
+</section>
+<section id="section-3" class="section">
 <h2>Additional from Perplexity</h2>
+<div class="sub-section" id="historical-academic-milestones">
 <h3>Historical Academic Milestones</h3>
+</div>
 <ul>
 <li><strong>2007–2008</strong>: Reported as <strong>2nd in API</strong> among California public school systems and the <strong>7th best middle school in California</strong>.</li>
 <li><strong>More than 90% of students</strong> scored in advanced proficient category for ELA, Math, and Science in historical reports.</li>
 </ul>
+<div class="sub-section" id="facilities-fault-line-discovery">
 <h3>Facilities — Fault Line Discovery</h3>
+</div>
 <ul>
 <li>A construction inspection reportedly found the school was <strong>built on a large fault</strong>, which <strong>impacted remodeling efforts</strong> under the Measure I bond improvement plan (2000s).</li>
 <li>(Not mentioned by Grok — unique and notable finding.)</li>
 </ul>
+<div class="sub-section" id="district-founding-date">
 <h3>District Founding Date</h3>
+</div>
 <ul>
 <li>Perplexity attributes AUSD's founding to <strong>1952</strong>. (Grok does not specify district founding year in its findings.)</li>
 </ul>
+<div class="sub-section" id="community-involvement">
 <h3>Community Involvement</h3>
+</div>
 <ul>
 <li>National Blue Ribbon recognition brought significant community attention and pride.</li>
 <li>School mission emphasizes students making a "positive and profound impact on their world."</li>
 </ul>
-<section id="contradictions-discrepancies" class="section">
+</section>
+<section id="section-4" class="section">
 <h2>Contradictions / Discrepancies</h2>
 <table>
 <thead>
@@ -503,9 +569,12 @@
 </tr>
 </tbody>
 </table>
-<section id="sources" class="section">
+</section>
+<section id="section-5" class="section">
 <h2>SOURCES</h2>
+<div class="sub-section" id="from-grok-search">
 <h3>From Grok Search:</h3>
+</div>
 <ul>
 <li>https://fh.ausd.net/</li>
 <li>https://www.ausd.net/apps/pages/FoothillsNationalBlueRibbon</li>
@@ -520,7 +589,9 @@
 <li>https://www.instagram.com/reel/DXxrmjdFUCH/</li>
 <li>https://fh.ausd.net/apps/pages/index.jsp?uREC_ID=962752&amp;type=d&amp;pREC_ID=1285037</li>
 </ul>
+<div class="sub-section" id="from-perplexity">
 <h3>From Perplexity:</h3>
+</div>
 <ul>
 <li>https://en.wikipedia.org/wiki/Arcadia_Unified_School_District</li>
 <li>https://fh.ausd.net</li>
@@ -531,10 +602,12 @@
 <li>https://fh.ausd.net/apps/news/category/10224?pageIndex=2</li>
 <li>https://www.greatschools.org/california/arcadia/1469-Foothills-Middle-School/</li>
 </ul>
-<section id="confidence-high" class="section">
+</section>
+<section id="section-6" class="section">
 <h2>CONFIDENCE: High</h2>
 <p>Both sources are closely aligned on all major dimensions: identity (grades 6-8, AUSD, 171 E. Sycamore), enrollment (~640–685), demographics (majority Asian ~63%, Hispanic ~18%, White ~10%), National Blue Ribbon (2022), strong academic performance (~70-75% math/reading proficiency, historical 977 API), and Gifted &amp; Talented program. Grok provides significantly richer detail — principal name, rankings, test scores, student-teacher ratio, AVID, mental health initiatives, and an extensive club list. Perplexity corroborates the core facts and adds one unique facility finding (fault line discovery). Minor variances in enrollment and English Learner counts are attributable to different data snapshots and are not material contradictions.</p>
-<section id="gaps" class="section">
+</section>
+<section id="section-7" class="section">
 <h2>GAPS</h2>
 <ul>
 <li><strong>Fault line impact</strong>: Perplexity mentions the school was found to be built on a large fault that impacted remodeling — but no details on resolution, safety implications, or current status. This is a potentially significant facilities concern that neither source investigates further.</li>
@@ -548,6 +621,7 @@
 <li><strong>School-specific history</strong>: No founding date for Foothills specifically — Perplexity notes AUSD was founded in 1952 but that may be the district, not the school. The actual opening date of Foothills Middle School is not documented in either source.</li>
 <li><strong>No school-level funding data</strong>: Per-pupil spending at the school level not provided.</li>
 </ul>
+</section>
 
         <footer class="footer">
           <p>Oracle Research — Foothills Middle School, Arcadia CA</p>
