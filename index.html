@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light" />
-  <title>Foothills Middle School, Arcadia, CA — Synthesized Research</title>
+  <title>Foothills Middle School, Arcadia CA</title>
   <style>
     :root {
       --bg: #f6f7fb;
@@ -23,7 +23,7 @@
       --sidebar-width: 260px;
     }
 
-    * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
     html, body {
       margin: 0;
@@ -45,7 +45,7 @@
       min-height: 100vh;
     }
 
-    /* Sidebar styles */
+    /* Sidebar */
     .sidebar {
       width: var(--sidebar-width);
       background: var(--surface);
@@ -56,6 +56,7 @@
       height: 100vh;
       overflow-y: auto;
       transition: all 0.3s ease;
+      flex-shrink: 0;
     }
 
     .toc-title {
@@ -94,7 +95,7 @@
       color: white;
     }
 
-    /* Color-coded TOC - matches main window claim colors */
+    /* Color-coded TOC items — 10 color slots (rotate for >10 items) */
     .toc-item:nth-child(1) .toc-link { border-left: 4px solid #2d6a4f; background: rgba(184, 224, 208, 0.3); }
     .toc-item:nth-child(2) .toc-link { border-left: 4px solid #1d3557; background: rgba(197, 213, 216, 0.3); }
     .toc-item:nth-child(3) .toc-link { border-left: 4px solid #457b9d; background: rgba(200, 223, 240, 0.3); }
@@ -142,7 +143,7 @@
       color: white;
     }
 
-    /* Main content styles */
+    /* Main content */
     .main-content {
       flex: 1;
       padding: 24px;
@@ -196,7 +197,7 @@
       .container {
         flex-direction: column;
       }
-      
+
       .sidebar {
         width: 100%;
         height: auto;
@@ -205,41 +206,41 @@
         border-bottom: 1px solid var(--border);
         padding: 16px;
       }
-      
+
       .main-content {
         max-width: 100%;
         padding: 16px;
       }
-      
+
       .toc-title {
         display: none;
       }
-      
+
       .toc-list {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
       }
-      
+
       .toc-item {
         flex: 1 1 auto;
       }
-      
+
       .toc-link {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
-      
+
       .toc-sublist {
         display: none;
       }
-      
+
       .grid.cols-2,
       .grid.cols-3 { grid-template-columns: 1fr; }
     }
 
-    /* Card styling */
+    /* Cards */
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -260,34 +261,34 @@
       border-bottom: 1px solid var(--border);
     }
 
-    /* Claim color blocks - main claim darker, subpoints lighter */
+    /* Claim color blocks — 10 slots (rotate for >10 claims) */
     #claim-1 { background: #b8e0d0; border-left: 4px solid #2d6a4f; }
     #claim-1 .source-card { background: #d9eae0; border-left: 4px solid #2d6a4f; }
-    
+
     #claim-2 { background: #c5d5d8; border-left: 4px solid #1d3557; }
     #claim-2 .source-card { background: #dde6e7; border-left: 4px solid #1d3557; }
-    
+
     #claim-3 { background: #c8dff0; border-left: 4px solid #457b9d; }
     #claim-3 .source-card { background: #e4eff7; border-left: 4px solid #457b9d; }
-    
+
     #claim-4 { background: #c0c9d0; border-left: 4px solid #4a4e69; }
     #claim-4 .source-card { background: #d7dfe4; border-left: 4px solid #4a4e69; }
-    
+
     #claim-5 { background: #edd5ce; border-left: 4px solid #9d4edd; }
     #claim-5 .source-card { background: #f6e9e5; border-left: 4px solid #9d4edd; }
-    
+
     #claim-6 { background: #c5c8ca; border-left: 4px solid #6c757d; }
     #claim-6 .source-card { background: #dde0e2; border-left: 4px solid #6c757d; }
-    
+
     #claim-7 { background: #c0e6d0; border-left: 4px solid #40916c; }
     #claim-7 .source-card { background: #e1f4e8; border-left: 4px solid #40916c; }
-    
+
     #claim-8 { background: #e0d0e8; border-left: 4px solid #7b2cbf; }
     #claim-8 .source-card { background: #f0e6f5; border-left: 4px solid #7b2cbf; }
-    
+
     #claim-9 { background: #f0e0c0; border-left: 4px solid #d4a373; }
     #claim-9 .source-card { background: #fff2d9; border-left: 4px solid #d4a373; }
-    
+
     #claim-10 { background: #c8d5e5; border-left: 4px solid #5c677d; }
     #claim-10 .source-card { background: #e8f0f7; border-left: 4px solid #5c677d; }
 
@@ -312,37 +313,14 @@
       margin-bottom: 18px;
     }
 
-    .source-card[data-source="rand"] {
-      border-left: 4px solid #335cff;
-    }
-
-    .source-card[data-source="brookings"] {
-      border-left: 4px solid #0f766e;
-    }
-
-    .source-card[data-source="csis"] {
-      border-left: 4px solid #8a2be2;
-    }
-
-    .source-card[data-source="cfr"] {
-      border-left: 4px solid #ff7f00;
-    }
-
-    .source-card[data-source="foreign-affairs"] {
-      border-left: 4px solid #ff0000;
-    }
-
-    .source-card[data-source="nyt"] {
-      border-left: 4px solid #ffd700;
-    }
-
-    .source-card[data-source="washington-post"] {
-      border-left: 4px solid #008080;
-    }
-
-    .source-card[data-source="ifri"] {
-      border-left: 4px solid #ff69b4;
-    }
+    .source-card[data-source="rand"] { border-left: 4px solid #335cff; }
+    .source-card[data-source="brookings"] { border-left: 4px solid #0f766e; }
+    .source-card[data-source="csis"] { border-left: 4px solid #8a2be2; }
+    .source-card[data-source="cfr"] { border-left: 4px solid #ff7f00; }
+    .source-card[data-source="foreign-affairs"] { border-left: 4px solid #ff0000; }
+    .source-card[data-source="nyt"] { border-left: 4px solid #ffd700; }
+    .source-card[data-source="washington-post"] { border-left: 4px solid #008080; }
+    .source-card[data-source="ifri"] { border-left: 4px solid #ff69b4; }
 
     .source-card blockquote {
       margin: 0;
@@ -424,7 +402,6 @@
       margin-top: 30px;
     }
 
-    /* Scroll behavior */
     html {
       scroll-behavior: smooth;
     }
@@ -436,138 +413,31 @@
     <aside class="sidebar">
       <h3 class="toc-title">Table of Contents</h3>
       <ul class="toc-list">
-        <li class="toc-item">
-          <a href="#claim-1" class="toc-link">Corroborated Findings (both sources agree)</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-1-sub-1" class="toc-sublink">Basic Facts</a></li>
-            <li class="toc-subitem"><a href="#claim-1-sub-2" class="toc-sublink">Enrollment & Demographics</a></li>
-            <li class="toc-subitem"><a href="#claim-1-sub-3" class="toc-sublink">National Blue Ribbon School</a></li>
-            <li class="toc-subitem"><a href="#claim-1-sub-4" class="toc-sublink">Academic Performance</a></li>
-            <li class="toc-subitem"><a href="#claim-1-sub-5" class="toc-sublink">Gifted & Talented Program</a></li>
-            <li class="toc-subitem"><a href="#claim-1-sub-6" class="toc-sublink">Accreditation & AUSD Context</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-2" class="toc-link">Additional from Grok Search</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-2-sub-1" class="toc-sublink">Leadership</a></li>
-            <li class="toc-subitem"><a href="#claim-2-sub-2" class="toc-sublink">Enrollment Detail</a></li>
-            <li class="toc-subitem"><a href="#claim-2-sub-3" class="toc-sublink">Rankings (Recent)</a></li>
-            <li class="toc-subitem"><a href="#claim-2-sub-4" class="toc-sublink">Programs & Extracurriculars</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-3" class="toc-link">Additional from Perplexity</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-3-sub-1" class="toc-sublink">Historical Academic Milestones</a></li>
-            <li class="toc-subitem"><a href="#claim-3-sub-2" class="toc-sublink">Facilities — Fault Line Discovery</a></li>
-            <li class="toc-subitem"><a href="#claim-3-sub-3" class="toc-sublink">District Founding Date</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-4" class="toc-link">Contradictions / Discrepancies</a>
-          <ul class="toc-sublist">
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-5" class="toc-link">SOURCES</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-5-sub-1" class="toc-sublink">From Grok Search:</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-6" class="toc-link">CONFIDENCE: High</a>
-          <ul class="toc-sublist">
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-7" class="toc-link">GAPS</a>
-          <ul class="toc-sublist">
-          </ul>
-        </li>
-</ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-2" class="toc-link">Claim 2: Moral anti-possession norms → pressure → arms control/sanctions → weakens deterrence credibility</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-2-sub-1" class="toc-sublink">Subpoint 1: Norms affecting policy</a></li>
-            <li class="toc-subitem"><a href="#claim-2-sub-2" class="toc-sublink">Subpoint 2: Arms control pressure</a></li>
-            <li class="toc-subitem"><a href="#claim-2-sub-3" class="toc-sublink">Subpoint 3: Credibility erosion</a></li>
-            <li class="toc-subitem"><a href="#claim-2-sub-4" class="toc-sublink">Subpoint 4: Deterrence weakening</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-3" class="toc-link">Claim 3: Weak deterrence → preventive strikes (Israel doctrine, Iran proxies)</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-3-sub-1" class="toc-sublink">Israeli Begin doctrine</a></li>
-            <li class="toc-subitem"><a href="#claim-3-sub-2" class="toc-sublink">Samson option</a></li>
-            <li class="toc-subitem"><a href="#claim-3-sub-3" class="toc-sublink">Iranian proxies</a></li>
-            <li class="toc-subitem"><a href="#claim-3-sub-4" class="toc-sublink">Preemption triggers</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-4" class="toc-link">Claim 4: Pressure → breakout acceleration + proxy/missile escalation</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-4-sub-1" class="toc-sublink">Iranian nuclear breakout timeline</a></li>
-            <li class="toc-subitem"><a href="#claim-4-sub-2" class="toc-sublink">Proxy responses</a></li>
-            <li class="toc-subitem"><a href="#claim-4-sub-3" class="toc-sublink">Missile programs</a></li>
-            <li class="toc-subitem"><a href="#claim-4-sub-4" class="toc-sublink">Intensified conflicts</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-5" class="toc-link">Claim 5: Strikes → retaliation cycle → proxy activation → US involvement</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-5-sub-1" class="toc-sublink">Escalation dynamics</a></li>
-            <li class="toc-subitem"><a href="#claim-5-sub-2" class="toc-sublink">Proxy activation</a></li>
-            <li class="toc-subitem"><a href="#claim-5-sub-3" class="toc-sublink">US commitment</a></li>
-            <li class="toc-subitem"><a href="#claim-5-sub-4" class="toc-sublink">US involvement</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-6" class="toc-link">Claim 6: Regional multi-front spread via Lebanon/Syria/Iraq/Yemen/Hormuz</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-6-sub-1" class="toc-sublink">Regional conflict spread</a></li>
-            <li class="toc-subitem"><a href="#claim-6-sub-2" class="toc-sublink">Strait of Hormuz</a></li>
-            <li class="toc-subitem"><a href="#claim-6-sub-3" class="toc-sublink">Multiple theaters</a></li>
-            <li class="toc-subitem"><a href="#claim-6-sub-4" class="toc-sublink">Multiple theaters</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-7" class="toc-link">Claim 7: Impacts - massive war/casualties/oil shock/economic collapse</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-7-sub-1" class="toc-sublink">Casualty estimates</a></li>
-            <li class="toc-subitem"><a href="#claim-7-sub-2" class="toc-sublink">Oil price shocks</a></li>
-            <li class="toc-subitem"><a href="#claim-7-sub-3" class="toc-sublink">Economic impact</a></li>
-            <li class="toc-subitem"><a href="#claim-7-sub-4" class="toc-sublink">Economic impact</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-8" class="toc-link">Claim 8: Superpowers pulled in → Great Power War risk</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-8-sub-1" class="toc-sublink">US-Russia-China involvement</a></li>
-            <li class="toc-subitem"><a href="#claim-8-sub-2" class="toc-sublink">US-Russia-China involvement</a></li>
-            <li class="toc-subitem"><a href="#claim-8-sub-3" class="toc-sublink">US-Russia-China involvement</a></li>
-            <li class="toc-subitem"><a href="#claim-8-sub-4" class="toc-sublink">Escalation to great power conflict</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-9" class="toc-link">Claim 9: Nuclear threshold - miscalculation/command breakdown → nuke use</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-9-sub-1" class="toc-sublink">Nuclear miscalculation risks</a></li>
-            <li class="toc-subitem"><a href="#claim-9-sub-2" class="toc-sublink">Command/control issues</a></li>
-            <li class="toc-subitem"><a href="#claim-9-sub-3" class="toc-sublink">1% risk frameworks</a></li>
-            <li class="toc-subitem"><a href="#claim-9-sub-4" class="toc-sublink">1% risk frameworks</a></li>
-          </ul>
-        </li>
-        <li class="toc-item">
-          <a href="#claim-10" class="toc-link">Claim 10: Double Bind - Aff can't win both "deterrence irrelevant" and "norms matter"</a>
-          <ul class="toc-sublist">
-            <li class="toc-subitem"><a href="#claim-10-sub-1" class="toc-sublink">Logical tension</a></li>
-            <li class="toc-subitem"><a href="#claim-10-sub-2" class="toc-sublink">Logical tension</a></li>
-            <li class="toc-subitem"><a href="#claim-10-sub-3" class="toc-sublink">Logical tension</a></li>
-            <li class="toc-subitem"><a href="#claim-10-sub-4" class="toc-sublink">Logical tension</a></li>
-          </ul>
-        </li>
+        <li class="toc-item"><a href="#corroborated-findings-both-sources-agree" class="toc-link">Corroborated Findings (both sources agree)</a></li>
+<li class="toc-subitem"><a href="#basic-facts" class="toc-sublink">Basic Facts</a></li>
+<li class="toc-subitem"><a href="#enrollment-demographics" class="toc-sublink">Enrollment & Demographics</a></li>
+<li class="toc-subitem"><a href="#national-blue-ribbon-school" class="toc-sublink">National Blue Ribbon School</a></li>
+<li class="toc-subitem"><a href="#academic-performance" class="toc-sublink">Academic Performance</a></li>
+<li class="toc-subitem"><a href="#gifted-talented-program" class="toc-sublink">Gifted & Talented Program</a></li>
+<li class="toc-subitem"><a href="#accreditation-ausd-context" class="toc-sublink">Accreditation & AUSD Context</a></li>
+<li class="toc-subitem"><a href="#facilities" class="toc-sublink">Facilities</a></li>
+<li class="toc-item"><a href="#additional-from-grok-search" class="toc-link">Additional from Grok Search</a></li>
+<li class="toc-subitem"><a href="#leadership" class="toc-sublink">Leadership</a></li>
+<li class="toc-subitem"><a href="#enrollment-detail" class="toc-sublink">Enrollment Detail</a></li>
+<li class="toc-subitem"><a href="#rankings-recent" class="toc-sublink">Rankings (Recent)</a></li>
+<li class="toc-subitem"><a href="#programs-extracurriculars" class="toc-sublink">Programs & Extracurriculars</a></li>
+<li class="toc-subitem"><a href="#reviews" class="toc-sublink">Reviews</a></li>
+<li class="toc-item"><a href="#additional-from-perplexity" class="toc-link">Additional from Perplexity</a></li>
+<li class="toc-subitem"><a href="#historical-academic-milestones" class="toc-sublink">Historical Academic Milestones</a></li>
+<li class="toc-subitem"><a href="#facilities-fault-line-discovery" class="toc-sublink">Facilities — Fault Line Discovery</a></li>
+<li class="toc-subitem"><a href="#district-founding-date" class="toc-sublink">District Founding Date</a></li>
+<li class="toc-subitem"><a href="#community-involvement" class="toc-sublink">Community Involvement</a></li>
+<li class="toc-item"><a href="#contradictions-discrepancies" class="toc-link">Contradictions / Discrepancies</a></li>
+<li class="toc-item"><a href="#sources" class="toc-link">SOURCES</a></li>
+<li class="toc-subitem"><a href="#from-grok-search" class="toc-sublink">From Grok Search:</a></li>
+<li class="toc-subitem"><a href="#from-perplexity" class="toc-sublink">From Perplexity:</a></li>
+<li class="toc-item"><a href="#confidence-high" class="toc-link">CONFIDENCE: High</a></li>
+<li class="toc-item"><a href="#gaps" class="toc-link">GAPS</a></li>
       </ul>
     </aside>
 
@@ -575,536 +445,245 @@
     <main class="main-content">
       <div class="wrap">
         <section class="hero">
-          <div class="eyebrow">Policy Research Brief · Nuclear Weapons Debate</div>
-          <h1>Nuclear Weapons: Deterrence, Escalation, and Policy Implications</h1>
-          <p class="lede">
-            A comprehensive analysis of nuclear weapons policy from multiple strategic and normative perspectives, 
-            examining deterrence stability, escalation risks, and policy implications for global security.
-          </p>
-          
+          <div class="eyebrow">Research Report</div>
+          <h1>Foothills Middle School, Arcadia CA</h1>
+          <p class="lede">Research on Foothills Middle School — a 2022 National Blue Ribbon School in Arcadia Unified</p>
+
           <div class="grid cols-3 section">
             <div class="card stat">
-              <strong>10</strong>
-              <span>Claims analyzed</span>
+              <strong>641</strong>
+              <span>Students Enrolled</span>
             </div>
             <div class="card stat">
-              <strong>40</strong>
-              <span>Subpoints with sources</span>
+              <strong>63%</strong>
+              <span>Asian Students</span>
             </div>
             <div class="card stat">
-              <strong>25+</strong>
-              <span>Research sources cited</span>
+              <strong>2022</strong>
+              <span>Blue Ribbon Year</span>
             </div>
           </div>
         </section>
 
-        <!-- Claim 1 -->
-        <section id="claim-1" class="section">
-          <h2>Claim 1: US-Israel-Iran deterrence equilibrium is currently stable and preventing nuke escalation</h2>
-          
-          <article id="claim-1-sub-1" class="source-card" data-source="foreign-affairs">
-            <h3>Subpoint 1: Gray-zone restraint</h3>
-            <blockquote>
-              <p class="source-name">Foreign Affairs (Erik Lin-Greenberg)</p>
-              <p class="source-url"><a href="https://www.foreignaffairs.com/world/wars-are-not-accidents-managing-risk-erik-lin-greenberg">https://www.foreignaffairs.com/world/wars-are-not-accidents-managing-risk-erik-lin-greenberg</a></p>
-              <p class="source-date">October 8, 2024</p>
-              <p class="source-quote">Describes how Iran, Israel, and the US engage in limited gray-zone tactics while using restraint to avoid uncontrollable escalation.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-1-sub-2" class="source-card" data-source="rand">
-            <h3>Subpoint 2: Israeli nukes</h3>
-            <blockquote>
-              <p class="source-name">RAND Corporation</p>
-              <p class="source-url"><a href="https://www.rand.org/content/dam/rand/pubs/monographs/2011/RAND_MG1143.pdf">https://www.rand.org/content/dam/rand/pubs/monographs/2011/RAND_MG1143.pdf</a></p>
-              <p class="source-date">2011</p>
-              <p class="source-quote">Analyzes Israel's nuclear arsenal and policy of ambiguity in the context of its rivalry with Iran.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-1-sub-3" class="source-card" data-source="brookings">
-            <h3>Subpoint 3: US umbrella</h3>
-            <blockquote>
-              <p class="source-name">Brookings Institution (Bruce Riedel and Gary Samore)</p>
-              <p class="source-url"><a href="https://www.brookings.edu/wp-content/uploads/2016/06/12_nuclear_proliferation_riedel.pdf">https://www.brookings.edu/wp-content/uploads/2016/06/12_nuclear_proliferation_riedel.pdf</a></p>
-              <p class="source-date">2008</p>
-              <p class="source-quote">Recommends a declared U.S. nuclear umbrella as key mechanism to deter a nuclear Iran.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-1-sub-4" class="source-card" data-source="csis">
-            <h3>Subpoint 4: Regional stability</h3>
-            <blockquote>
-              <p class="source-name">CSIS (Anthony H. Cordesman)</p>
-              <p class="source-url"><a href="https://www.csis.org/analysis/iran-waiting-option">https://www.csis.org/analysis/iran-waiting-option</a></p>
-              <p class="source-date">2012</p>
-              <p class="source-quote">Argues that mutual deterrence can manage risks with a nuclear Iran, preventing catastrophic major wars.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <!-- Claim 2 -->
-        <section id="claim-2" class="section">
-          <h2>Claim 2: Moral anti-possession norms → pressure → arms control/sanctions → weakens deterrence credibility</h2>
-          
-          <article id="claim-2-sub-1" class="source-card" data-source="rand">
-            <h3>Subpoint 1: Norms affecting policy</h3>
-            <blockquote>
-              <p class="source-name">RAND Corporation (Daniel M. Gerstein)</p>
-              <p class="source-url"><a href="https://www.rand.org/pubs/commentary/2016/10/protect-nuclear-nonproliferation-norms.html">https://www.rand.org/pubs/commentary/2016/10/protect-nuclear-nonproliferation-norms.html</a></p>
-              <p class="source-date">October 9, 2016</p>
-              <p class="source-quote">Discusses how international nonproliferation norms drive U.S. policy.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-2-sub-2" class="source-card" data-source="cfr">
-            <h3>Subpoint 2: Arms control pressure</h3>
-            <blockquote>
-              <p class="source-name">Council on Foreign Relations</p>
-              <p class="source-url"><a href="https://www.cfr.org/reports/global-nuclear-nonproliferation-regime">https://www.cfr.org/reports/global-nuclear-nonproliferation-regime</a></p>
-              <p class="source-date">March 30, 2009</p>
-              <p class="source-quote">Details how global nonproliferation norms produced sanctions and diplomatic initiatives against Iran.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-2-sub-3" class="source-card" data-source="brookings">
-            <h3>Subpoint 3: Credibility erosion</h3>
-            <blockquote>
-              <p class="source-name">Brookings Institution (Bruce Riedel)</p>
-              <p class="source-url"><a href="https://www.brookings.edu/wp-content/uploads/2016/06/12_nuclear_proliferation_riedel.pdf">https://www.brookings.edu/wp-content/uploads/2016/06/12_nuclear_proliferation_riedel.pdf</a></p>
-              <p class="source-date">circa 2009-2010</p>
-              <p class="source-quote">Examines how U.S. nonproliferation policy is constrained by perceived inconsistency regarding Israel's arsenal.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-2-sub-4" class="source-card" data-source="rand">
-            <h3>Subpoint 4: Deterrence weakening</h3>
-            <blockquote>
-              <p class="source-name">RAND Corporation</p>
-              <p class="source-url"><a href="https://www.rand.org/content/dam/rand/pubs/monographs/2011/RAND_MG1087.sum.pdf">https://www.rand.org/content/dam/rand/pubs/monographs/2011/RAND_MG1087.sum.pdf</a></p>
-              <p class="source-date">2011</p>
-              <p class="source-quote">Analyzes how reliance on extended deterrence can erode perceived credibility of U.S. commitments.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <!-- Claim 3 -->
-        <section id="claim-3" class="section">
-          <h2>Claim 3: Weak deterrence → preventive strikes (Israel doctrine, Iran proxies)</h2>
-          
-          <article id="claim-3-sub-1" class="source-card" data-source="csis">
-            <h3>Israeli Begin doctrine</h3>
-            <blockquote>
-              <p class="source-name">CSIS (Doreen Horschig and Bailey Schiff)</p>
-              <p class="source-url"><a href="https://www.csis.org/analysis/what-factors-drive-us-israeli-differences-irans-nuclear-challenge">https://www.csis.org/analysis/what-factors-drive-us-israeli-differences-irans-nuclear-challenge</a></p>
-              <p class="source-date">April 4, 2025</p>
-              <p class="source-quote">The "Begin Doctrine" underscores Israel's commitment to preemptively neutralize nuclear threats.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-3-sub-2" class="source-card" data-source="washington-post">
-            <h3>Samson option</h3>
-            <blockquote>
-              <p class="source-name">Washington Post</p>
-              <p class="source-url"><a href="https://www.washingtonpost.com/archive/entertainment/books/2006/02/19/the-samson-option-span-classbankheadthe-story-behind-one-of-the-worlds-worst-kept-secrets-the-jewish-states-atomic-arsenal-span/2eae4b5b-c508-404a-86b7-f07e3486aca4/">https://www.washingtonpost.com/archive/entertainment/books/2006/02/19/the-samson-option-span-classbankheadthe-story-behind-one-of-the-worlds-worst-kept-secrets-the-jewish-states-atomic-arsenal-span/2eae4b5b-c508-404a-86b7-f07e3486aca4/</a></p>
-              <p class="source-date">February 19, 2006</p>
-              <p class="source-quote">Details Israel's Samson Option as last-resort nuclear retaliation strategy.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-3-sub-3" class="source-card" data-source="brookings">
-            <h3>Iranian proxies</h3>
-            <blockquote>
-              <p class="source-name">Brookings (Dror Michman, Yael Mizrahi-Arnaud)</p>
-              <p class="source-url"><a href="https://www.brookings.edu/articles/iran-and-israel-face-off-in-syria-as-if-it-wasnt-complicated-enough/">https://www.brookings.edu/articles/iran-and-israel-face-off-in-syria-as-if-it-wasnt-complicated-enough/</a></p>
-              <p class="source-date">February 13, 2018</p>
-              <p class="source-quote">Iran uses proxy militias to challenge Israel's red lines while avoiding direct war.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-3-sub-4" class="source-card" data-source="rand">
-            <h3>Preemption triggers</h3>
-            <blockquote>
-              <p class="source-name">RAND Corporation</p>
-              <p class="source-url"><a href="https://www.rand.org/pubs/commentary/2026/01/the-israel-iran-detente-wont-last.html">https://www.rand.org/pubs/commentary/2026/01/the-israel-iran-detente-wont-last.html</a></p>
-              <p class="source-date">January 26, 2026</p>
-              <p class="source-quote">In Israel's post-October 7 mindset, preemption trumps deterrence when confronting Iran's nuclear advances.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <!-- Claim 4 -->
-        <section id="claim-4" class="section">
-          <h2>Claim 4: Pressure → breakout acceleration + proxy/missile escalation</h2>
-          
-          <article id="claim-4-sub-1" class="source-card" data-source="foreign-affairs">
-            <h3>Iranian nuclear breakout timeline</h3>
-            <blockquote>
-              <p class="source-name">Foreign Affairs</p>
-              <p class="source-url"><a href="https://www.foreignaffairs.com/iran/irans-dangerous-desperation">https://www.foreignaffairs.com/iran/irans-dangerous-desperation</a></p>
-              <p class="source-date">August 6, 2025</p>
-              <p class="source-quote">Iran may pursue accelerated covert crash program to acquire nuclear weapon within a year.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-4-sub-2" class="source-card" data-source="foreign-affairs">
-            <h3>Proxy responses</h3>
-            <blockquote>
-              <p class="source-name">Foreign Affairs</p>
-              <p class="source-url"><a href="https://www.foreignaffairs.com/middle-east/why-iran-will-escalate">https://www.foreignaffairs.com/middle-east/why-iran-will-escalate</a></p>
-              <p class="source-date">February 24, 2026</p>
-              <p class="source-quote">Iran expected to activate Houthi and Iraqi militias for retaliatory attacks.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-4-sub-3" class="source-card" data-source="nyt">
-            <h3>Missile programs</h3>
-            <blockquote>
-              <p class="source-name">The New York Times</p>
-              <p class="source-url"><a href="https://www.nytimes.com/2026/02/06/world/middleeast/iran-missile-nuclear-repairs.html">https://www.nytimes.com/2026/02/06/world/middleeast/iran-missile-nuclear-repairs.html</a></p>
-              <p class="source-date">February 6, 2026</p>
-              <p class="source-quote">Satellite imagery shows Iran rapidly rebuilt ballistic missile facilities after strikes.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-4-sub-4" class="source-card" data-source="brookings">
-            <h3>Intensified conflicts</h3>
-            <blockquote>
-              <p class="source-name">Brookings Institution</p>
-              <p class="source-url"><a href="https://www.brookings.edu/articles/after-the-strike-the-danger-of-war-in-iran/">https://www.brookings.edu/articles/after-the-strike-the-danger-of-war-in-iran/</a></p>
-              <p class="source-date">March 2, 2026</p>
-              <p class="source-quote">Iranian responses have intensified and expanded conflict across region.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <!-- Claim 5 -->
-        <section id="claim-5" class="section">
-          <h2>Claim 5: Strikes → retaliation cycle → proxy activation → US involvement</h2>
-          
-          <article id="claim-5-sub-1" class="source-card" data-source="csis">
-            <h3>Subpoint 1: Escalation dynamics</h3>
-            <blockquote>
-              <p class="source-name">CSIS</p>
-              <p class="source-url"><a href="https://www.csis.org/analysis/visualizing-irans-escalation-strategy">https://www.csis.org/analysis/visualizing-irans-escalation-strategy</a></p>
-              <p class="source-date">March 27, 2026</p>
-              <p class="source-quote">Iran's strategy of "eye for an eye" retaliation sustains strikes-retaliation cycle.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-5-sub-2" class="source-card" data-source="cfr">
-            <h3>Subpoint 2: Proxy activation</h3>
-            <blockquote>
-              <p class="source-name">CFR</p>
-              <p class="source-url"><a href="https://www.cfr.org/article/what-is-hezbollah-and-what-are-its-goals">https://www.cfr.org/article/what-is-hezbollah-and-what-are-its-goals</a></p>
-              <p class="source-date">October 7, 2024</p>
-              <p class="source-quote">Hezbollah's 150,000 rockets and missiles serve Iran's deterrent and retaliation strategy.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-5-sub-3" class="source-card" data-source="brookings">
-            <h3>Subpoint 3: US commitment</h3>
-            <blockquote>
-              <p class="source-name">Brookings (Natan Sachs)</p>
-              <p class="source-url"><a href="https://www.brookings.edu/articles/the-us-israel-iran-war/">https://www.brookings.edu/articles/the-us-israel-iran-war/</a></p>
-              <p class="source-date">July 23, 2025</p>
-              <p class="source-quote">U.S. bombing of Iranian nuclear facilities widened conflict and provoked Iranian retaliation against U.S. base.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-5-sub-4" class="source-card" data-source="rand">
-            <h3>Subpoint 4: US involvement</h3>
-            <blockquote>
-              <p class="source-name">RAND Corporation</p>
-              <p class="source-url"><a href="https://www.rand.org/pubs/commentary/2026/01/the-israel-iran-detente-wont-last.html">https://www.rand.org/pubs/commentary/2026/01/the-israel-iran-detente-wont-last.html</a></p>
-              <p class="source-date">January 26, 2026</p>
-              <p class="source-quote">U.S. involvement in strikes on Iran creates commitment to defend Israel and respond to Iranian retaliation.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <!-- Claim 6 -->
-        <section id="claim-6" class="section">
-          <h2>Claim 6: Regional multi-front spread via Lebanon/Syria/Iraq/Yemen/Hormuz</h2>
-          
-          <article id="claim-6-sub-1" class="source-card" data-source="brookings">
-            <h3>Subpoint 1: Regional conflict spread</h3>
-            <blockquote>
-              <p class="source-name">Brookings Institution (Jeffrey Feltman)</p>
-              <p class="source-url"><a href="https://www.brookings.edu/articles/on-hezbollah-lebanon-and-the-risk-of-escalation/">https://www.brookings.edu/articles/on-hezbollah-lebanon-and-the-risk-of-escalation/</a></p>
-              <p class="source-date">November 17, 2023</p>
-              <p class="source-quote">Hezbollah's arsenal serves primarily as Iran's deterrence against Israel.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-6-sub-2" class="source-card" data-source="brookings">
-            <h3>Subpoint 2: Strait of Hormuz</h3>
-            <blockquote>
-              <p class="source-name">Brookings Institution (Suzanne Maloney)</p>
-              <p class="source-url"><a href="https://www.brookings.edu/articles/the-path-forward-on-iran-and-its-proxy-forces/">https://www.brookings.edu/articles/the-path-forward-on-iran-and-its-proxy-forces/</a></p>
-              <p class="source-date">March 1, 2024</p>
-              <p class="source-quote">Iranian-backed militias conducted at least 170 attacks on U.S. forces after October 2023.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-6-sub-3" class="source-card" data-source="cfr">
-            <h3>Subpoint 3: Multiple theaters</h3>
-            <blockquote>
-              <p class="source-name">Council on Foreign Relations</p>
-              <p class="source-url"><a href="https://www.cfr.org/global-conflict-tracker/conflict/war-yemen">https://www.cfr.org/global-conflict-tracker/conflict/war-yemen</a></p>
-              <p class="source-date">April 14, 2026</p>
-              <p class="source-quote">Iran-backed Houthi attacks on Red Sea shipping expand conflict regionally.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-6-sub-4" class="source-card" data-source="rand">
-            <h3>Subpoint 4: Multiple theaters</h3>
-            <blockquote>
-              <p class="source-name">RAND Corporation</p>
-              <p class="source-url"><a href="https://www.rand.org/pubs/commentary/2012/10/will-iran-close-the-strait-of-hormuz.html">https://www.rand.org/pubs/commentary/2012/10/will-iran-close-the-strait-of-hormuz.html</a></p>
-              <p class="source-date">October 2, 2012</p>
-              <p class="source-quote">Iran's threats to close Hormuz serve as powerful deterrence against Israeli or U.S. strikes.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <!-- Claim 7 -->
-        <section id="claim-7" class="section">
-          <h2>Claim 7: Impacts - massive war/casualties/oil shock/economic collapse</h2>
-          
-          <article id="claim-7-sub-1" class="source-card" data-source="cfr">
-            <h3>Subpoint 1: Casualty estimates</h3>
-            <blockquote>
-              <p class="source-name">Council on Foreign Relations (CFR)</p>
-              <p class="source-url"><a href="https://www.cfr.org/global-conflict-tracker/conflict/confrontation-between-united-states-and-iran">https://www.cfr.org/global-conflict-tracker/conflict/confrontation-between-united-states-and-iran</a></p>
-              <p class="source-date">April 22, 2026</p>
-              <p class="source-quote">Documents thousands of deaths from strikes in multi-front US-Israel-Iran conflict.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-7-sub-2" class="source-card" data-source="brookings">
-            <h3>Subpoint 2: Oil price shocks</h3>
-            <blockquote>
-              <p class="source-name">Brookings Institution (Caitlin Talmadge)</p>
-              <p class="source-url"><a href="https://www.brookings.edu/articles/why-irans-disruption-of-the-strait-of-hormuz-matters/">https://www.brookings.edu/articles/why-irans-disruption-of-the-strait-of-hormuz-matters/</a></p>
-              <p class="source-date">March 19, 2026</p>
-              <p class="source-quote">Closure of Strait of Hormuz results in 15-17% loss of global oil supply.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-7-sub-3" class="source-card" data-source="rand">
-            <h3>Subpoint 3: Economic impact</h3>
-            <blockquote>
-              <p class="source-name">RAND Corporation</p>
-              <p class="source-url"><a href="https://www.rand.org/pubs/commentary/2026/03/war-in-iran-qa-with-rand-experts.html">https://www.rand.org/pubs/commentary/2026/03/war-in-iran-qa-with-rand-experts.html</a></p>
-              <p class="source-date">March 10, 2026</p>
-              <p class="source-quote">Prolonged Hormuz closure risks pushing world into recession.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-7-sub-4" class="source-card" data-source="csis">
-            <h3>Subpoint 4: Economic impact</h3>
-            <blockquote>
-              <p class="source-name">Center for Strategic and International Studies (CSIS)</p>
-              <p class="source-url"><a href="https://www.csis.org/analysis/what-are-unintended-consequences-us-iran-conflict-defense-and-security">https://www.csis.org/analysis/what-are-unintended-consequences-us-iran-conflict-defense-and-security</a></p>
-              <p class="source-date">April 9, 2026</p>
-              <p class="source-quote">Years-long repair of damaged energy infrastructure, persistent instability, refugee flows.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <!-- Claim 8 -->
-        <section id="claim-8" class="section">
-          <h2>Claim 8: Superpowers pulled in → Great Power War risk</h2>
-          
-          <article id="claim-8-sub-1" class="source-card" data-source="brookings">
-            <h3>Subpoint 1: US-Russia-China involvement</h3>
-            <blockquote>
-              <p class="source-name">Brookings Institution (Kevin Huggard, Mallika Yadwad)</p>
-              <p class="source-url"><a href="https://www.brookings.edu/articles/the-road-to-the-israel-iran-war/">https://www.brookings.edu/articles/the-road-to-the-israel-iran-war/</a></p>
-              <p class="source-date">July 23, 2025</p>
-              <p class="source-quote">U.S. bombing of Iranian nuclear facilities widened conflict into broader regional war.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-8-sub-2" class="source-card" data-source="foreign-affairs">
-            <h3>Subpoint 2: US-Russia-China involvement</h3>
-            <blockquote>
-              <p class="source-name">Foreign Affairs (Jon B. Alterman and Ali Vaez)</p>
-              <p class="source-url"><a href="https://www.foreignaffairs.com/united-states/how-china-and-russia-can-exploit-iran-war">https://www.foreignaffairs.com/united-states/how-china-and-russia-can-exploit-iran-war</a></p>
-              <p class="source-date">April 23, 2026</p>
-              <p class="source-quote">Russian military support for Iran deepens operational cooperation.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-8-sub-3" class="source-card" data-source="csis">
-            <h3>Subpoint 3: US-Russia-China involvement</h3>
-            <blockquote>
-              <p class="source-name">CSIS (Harrison Prétat, Monica Sato, Aidan Powers-Riggs, Matthew P. Funaiole)</p>
-              <p class="source-url"><a href="https://www.csis.org/analysis/no-one-not-even-beijing-getting-through-strait-hormuz">https://www.csis.org/analysis/no-one-not-even-beijing-getting-through-strait-hormuz</a></p>
-              <p class="source-date">March 6, 2026</p>
-              <p class="source-quote">Iran's closure of Hormuz threatens China's oil imports creating friction.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-8-sub-4" class="source-card" data-source="foreign-affairs">
-            <h3>Subpoint 4: Escalation to great power conflict</h3>
-            <blockquote>
-              <p class="source-name">Foreign Affairs (Jon B. Alterman and Ali Vaez)</p>
-              <p class="source-url"><a href="https://www.foreignaffairs.com/united-states/how-china-and-russia-can-exploit-iran-war">https://www.foreignaffairs.com/united-states/how-china-and-russia-can-exploit-iran-war</a></p>
-              <p class="source-date">April 23, 2026</p>
-              <p class="source-quote">Russia and China exploiting war heightens chances of broader great power confrontation.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <!-- Claim 9 -->
-        <section id="claim-9" class="section">
-          <h2>Claim 9: Nuclear threshold - miscalculation/command breakdown → nuke use</h2>
-          
-          <article id="claim-9-sub-1" class="source-card" data-source="csis">
-            <h3>Subpoint 1: Nuclear miscalculation risks</h3>
-            <blockquote>
-              <p class="source-name">CSIS (Mona Yacoubian, Dan Byman, et al.)</p>
-              <p class="source-url"><a href="https://www.csis.org/analysis/israel-and-iran-war-what-comes-next">https://www.csis.org/analysis/israel-and-iran-war-what-comes-next</a></p>
-              <p class="source-date">June 17, 2025</p>
-              <p class="source-quote">Substantial potential for miscalculations due to fog of war and conflicting information.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-9-sub-2" class="source-card" data-source="rand">
-            <h3>Subpoint 2: Command/control issues</h3>
-            <blockquote>
-              <p class="source-name">RAND Corporation</p>
-              <p class="source-url"><a href="https://www.rand.org/content/dam/rand/pubs/research_reports/RR300/RR310/RAND_RR310.pdf">https://www.rand.org/content/dam/rand/pubs/research_reports/RR300/RR310/RAND_RR310.pdf</a></p>
-              <p class="source-date">2013</p>
-              <p class="source-quote">Risks of stress, irrationality, rogue actions in C2 systems under crisis conditions.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-9-sub-3" class="source-card" data-source="rand">
-            <h3>Subpoint 3: 1% risk frameworks</h3>
-            <blockquote>
-              <p class="source-name">RAND Corporation (Edward Geist et al.)</p>
-              <p class="source-url"><a href="https://www.rand.org/pubs/research_reports/RRA2673-1.html">https://www.rand.org/pubs/research_reports/RRA2673-1.html</a></p>
-              <p class="source-date">2025</p>
-              <p class="source-quote">ROMANCER model for assessing nuclear crisis escalation risk.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-9-sub-4" class="source-card" data-source="ifri">
-            <h3>Subpoint 4: 1% risk frameworks</h3>
-            <blockquote>
-              <p class="source-name">James A. Russell / IFRI</p>
-              <p class="source-url"><a href="https://www.ifri.org/sites/default/files/migrated_files/documents/atoms/files/pp26_russell_2009_3.pdf">https://www.ifri.org/sites/default/files/migrated_files/documents/atoms/files/pp26_russell_2009_3.pdf</a></p>
-              <p class="source-date">2009</p>
-              <p class="source-quote">Preventive attacks could lead to breaking the historic nuclear taboo.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <!-- Claim 10 -->
-        <section id="claim-10" class="section">
-          <h2>Claim 10: Double Bind - Aff can't win both "deterrence irrelevant" and "norms matter"</h2>
-          
-          <article id="claim-10-sub-1" class="source-card" data-source="foreign-affairs">
-            <h3>Subpoint 1: Logical tension</h3>
-            <blockquote>
-              <p class="source-name">Carter Malkasian and Zachary Constantino / Foreign Affairs</p>
-              <p class="source-url"><a href="https://www.foreignaffairs.com/united-states/nuclear-powers-conventional-wars">https://www.foreignaffairs.com/united-states/nuclear-powers-conventional-wars</a></p>
-              <p class="source-date">July 17, 2025</p>
-              <p class="source-quote">Israel's nuclear weapons failed to stop escalating warfare, demonstrating deterrence irrelevance.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-10-sub-2" class="source-card" data-source="csis">
-            <h3>Subpoint 2: Logical tension</h3>
-            <blockquote>
-              <p class="source-name">Suzanne Claeys and Bernadette Stadler / CSIS</p>
-              <p class="source-url"><a href="https://www.csis.org/analysis/bad-idea-ignoring-treaty-prohibition-nuclear-weapons">https://www.csis.org/analysis/bad-idea-ignoring-treaty-prohibition-nuclear-weapons</a></p>
-              <p class="source-date">December 7, 2018</p>
-              <p class="source-quote">TPNW designed to delegitimize nuclear weapons through international norms.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-10-sub-3" class="source-card" data-source="international-organization">
-            <h3>Subpoint 3: Logical tension</h3>
-            <blockquote>
-              <p class="source-name">Nina Tannenwald / International Organization</p>
-              <p class="source-url"><a href="https://www.cambridge.org/core/journals/international-organization/article/nuclear-taboo-the-united-states-and-the-normative-basis-of-nuclear-nonuse/EA04E0104A42C12FC785A70F301197CC">https://www.cambridge.org/core/journals/international-organization/article/nuclear-taboo-the-united-states-and-the-normative-basis-of-nuclear-nonuse/EA04E0104A42C12FC785A70F301197CC</a></p>
-              <p class="source-date">1999</p>
-              <p class="source-quote">Nuclear taboo has stigmatized weapons as morally unacceptable, creating tension because if moral norms affect states then strategic fear logically does too.</p>
-            </blockquote>
-          </article>
-          
-          <article id="claim-10-sub-4" class="source-card" data-source="foreign-affairs">
-            <h3>Subpoint 4: Logical tension</h3>
-            <blockquote>
-              <p class="source-name">Nina Tannenwald / Foreign Affairs</p>
-              <p class="source-url"><a href="https://www.foreignaffairs.com/articles/world/2018-10-15/vanishing-nuclear-taboo">https://www.foreignaffairs.com/articles/world/2018-10-15/vanishing-nuclear-taboo</a></p>
-              <p class="source-date">October 15, 2018</p>
-              <p class="source-quote">Nuclear taboo under pressure underscores affirmative double bind.</p>
-            </blockquote>
-          </article>
-        </section>
-
-        <section class="section">
-          <div class="callout">
-            <h2>Arguments & Evidence</h2>
-            <p>
-              Use this section to present structured claims, each supported by evidence cards, citations,
-              and counterarguments. The card grid below adapts to mobile and desktop automatically.
-            </p>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="callout danger">
-            <h2>Risks & Counterarguments</h2>
-            <p>
-              Address opposing views, escalation risks, and ethical concerns.
-              Use the <code>.danger</code> callout style for high-risk or cautionary notes.
-            </p>
-          </div>
-        </section>
+        <h1>Foothills Middle School, Arcadia, CA — Synthesized Research</h1>
+<h2>Corroborated Findings (both sources agree)</h2>
+<h3>Basic Facts</h3>
+<ul>
+<li>Public middle school serving <strong>grades 6–8</strong> in <strong>Arcadia, California</strong>.</li>
+<li>Part of the <strong>Arcadia Unified School District (AUSD)</strong>.</li>
+<li>Located at <strong>171 East Sycamore Ave., Arcadia, CA 91006</strong>.</li>
+<li>Website: fh.ausd.net.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+<h3>Enrollment &amp; Demographics</h3>
+<ul>
+<li>Enrollment: approximately <strong>641–684 students</strong> (Grok: 641 CDE 2025-26, ~650-684 other sources; Perplexity: ~684).</li>
+<li><strong>Majority Asian</strong>: ~63–64% (Grok: 63-64%; Perplexity: 429 students, ~63%).</li>
+<li>Hispanic/Latino: ~18% (Grok: 18%; Perplexity: 128 students, ~19%).</li>
+<li>White: ~8–11% (Grok: 8-11%; Perplexity: 73 students, ~11%).</li>
+<li>Two or More Races: ~6–7% (Grok: 6-7%; Perplexity: 47 students, ~7%).</li>
+<li>Small percentages Black/African American, American Indian, Pacific Islander.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+<h3>National Blue Ribbon School</h3>
+<ul>
+<li>Named a <strong>2022 National Blue Ribbon School</strong> by the U.S. Department of Education — one of few in California — recognizing strong overall academic performance and success in closing achievement gaps.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+<h3>Academic Performance</h3>
+<ul>
+<li>Historically high-performing with strong proficiency rates.</li>
+<li><strong>API of 977</strong> (2012–2013) — Perplexity; Grok confirms long history of top API rankings (#1 tied among LA County middle schools on older measures).</li>
+<li>Strong CAASPP/Smarter Balanced performance: ~70–75% proficient in math, ~75% in reading/ELA, well above state averages.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+<h3>Gifted &amp; Talented Program</h3>
+<ul>
+<li>Offers a Gifted &amp; Talented (GATE) program.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+<h3>Accreditation &amp; AUSD Context</h3>
+<ul>
+<li>AUSD ranks in the <strong>top 1% of U.S. school districts</strong> according to Niche.</li>
+<li>All AUSD schools recognized as California Distinguished Schools.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+<h3>Facilities</h3>
+<ul>
+<li>Includes classrooms, science labs, music building, multipurpose room, library, computer lab.</li>
+<li>Part of past bond-funded improvements.</li>
+<li>(Sources: grok + perplexity)</li>
+</ul>
+<hr />
+<h2>Additional from Grok Search</h2>
+<h3>Leadership</h3>
+<ul>
+<li><strong>Principal</strong>: Dr. Benjamin Acker.</li>
+</ul>
+<h3>Enrollment Detail</h3>
+<ul>
+<li><strong>Student-teacher ratio</strong>: ~24:1.</li>
+<li>~29 full-time teachers.</li>
+<li>Gender split: ~48% female, 52% male.</li>
+<li>~29% economically disadvantaged.</li>
+<li>~8.6% English Learners (~55 students; Perplexity says 62 / 9.1% — close but slightly different).</li>
+</ul>
+<h3>Rankings (Recent)</h3>
+<ul>
+<li><strong>Niche</strong>: A+ overall, A in academics; <strong>#34 Best Public Middle Schools in California</strong> (out of ~2,749); #29 in CA for best public middle school teachers.</li>
+<li><strong>U.S. News &amp; World Report</strong>: #107 in California middle schools; #2–3 within Arcadia USD; overall score 95.33/100.</li>
+<li><strong>Chronic absenteeism</strong>: Low; daily attendance ~95%.</li>
+</ul>
+<h3>Programs &amp; Extracurriculars</h3>
+<ul>
+<li><strong>AVID</strong> (Advancement Via Individual Determination): College-readiness elective supporting motivated students in the academic middle.</li>
+<li><strong>District-wide initiatives</strong>: Mental health support (full-time counselors), "The Leader in Me" character education, restorative practices, social-emotional learning.</li>
+<li><strong>Student-driven clubs</strong> (change yearly; students propose via application): Anime Club, Art Journaling/Calligraphy, AVID Club, Board Games, Chess &amp; Checkers, Colorful Artists, Cup Stacking, Curious Scientists, DIY, Foothills Broadcast Club, Green Club, Mystery Club, Open Mic, Tabletop Games.</li>
+<li><strong>Electives</strong>: Arts, music, STEM, physical education, leadership, broadcast/media, science-oriented activities.</li>
+<li><strong>Athletics</strong>: Offered as part of physical development focus and AUSD offerings (specific teams vary).</li>
+</ul>
+<h3>Reviews</h3>
+<ul>
+<li>Niche reviews average ~3.6/5 — mixed but generally positive on academics and teachers; some note competitiveness.</li>
+<li>Teachers receive A+ grade on Niche for care and classroom management; high teacher salaries noted.</li>
+</ul>
+<hr />
+<h2>Additional from Perplexity</h2>
+<h3>Historical Academic Milestones</h3>
+<ul>
+<li><strong>2007–2008</strong>: Reported as <strong>2nd in API</strong> among California public school systems and the <strong>7th best middle school in California</strong>.</li>
+<li><strong>More than 90% of students</strong> scored in advanced proficient category for ELA, Math, and Science in historical reports.</li>
+</ul>
+<h3>Facilities — Fault Line Discovery</h3>
+<ul>
+<li>A construction inspection reportedly found the school was <strong>built on a large fault</strong>, which <strong>impacted remodeling efforts</strong> under the Measure I bond improvement plan (2000s).</li>
+<li>(Not mentioned by Grok — unique and notable finding.)</li>
+</ul>
+<h3>District Founding Date</h3>
+<ul>
+<li>Perplexity attributes AUSD's founding to <strong>1952</strong>. (Grok does not specify district founding year in its findings.)</li>
+</ul>
+<h3>Community Involvement</h3>
+<ul>
+<li>National Blue Ribbon recognition brought significant community attention and pride.</li>
+<li>School mission emphasizes students making a "positive and profound impact on their world."</li>
+</ul>
+<hr />
+<h2>Contradictions / Discrepancies</h2>
+<table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Grok</th>
+<th>Perplexity</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enrollment</strong></td>
+<td>641 (CDE 2025–26); ~650–684 other sources</td>
+<td>684</td>
+<td>Minor variance — different years/sources. Both in the 640–685 range.</td>
+</tr>
+<tr>
+<td><strong>English Learners</strong></td>
+<td>~55 students (8.6%)</td>
+<td>62 students (9.1%)</td>
+<td>Minor variance — likely from different data snapshots. Both in the same ballpark.</td>
+</tr>
+<tr>
+<td><strong>AUSD founding date</strong></td>
+<td>Not specified</td>
+<td>1952</td>
+<td>No contradiction — Grok simply didn't include this. Note: AUSD was likely founded earlier than 1952 (Arcadia High opened in 1952, implying the district already existed). Perplexity may be rounding or using a reorganization date.</td>
+</tr>
+<tr>
+<td><strong>Fault line</strong></td>
+<td>Not mentioned</td>
+<td>Mentioned — large fault discovered during construction inspection, impacted remodeling</td>
+<td>Grok didn't surface this. Perplexity's unique finding. Plausible and significant if accurate.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>SOURCES</h2>
+<h3>From Grok Search:</h3>
+<ul>
+<li>https://fh.ausd.net/</li>
+<li>https://www.ausd.net/apps/pages/FoothillsNationalBlueRibbon</li>
+<li>https://www.ausd.net/apps/pages/index.jsp?uREC_ID=965712&amp;type=d&amp;pREC_ID=2629391&amp;tota11y=true</li>
+<li>https://www.niche.com/k12/foothills-middle-school-arcadia-ca/</li>
+<li>https://www.cde.ca.gov/sdprofile/details.aspx?cds=19642616061246</li>
+<li>https://www.usnews.com/education/k12/california/foothills-middle-262807</li>
+<li>https://dq.cde.ca.gov/dataquest/dqcensus/enrethlevels.aspx?agglevel=School&amp;year=2024-25&amp;cds=19642616061246</li>
+<li>https://www.greatschools.org/california/arcadia/1469-Foothills-Middle-School/</li>
+<li>https://www.usnews.com/education/k12/middle-schools/california/arcadia-unified-school-district-111623</li>
+<li>https://www.schooldigger.com/go/CA/schools/0297000229/school.aspx</li>
+<li>https://www.instagram.com/reel/DXxrmjdFUCH/</li>
+<li>https://fh.ausd.net/apps/pages/index.jsp?uREC_ID=962752&amp;type=d&amp;pREC_ID=1285037</li>
+</ul>
+<h3>From Perplexity:</h3>
+<ul>
+<li>https://en.wikipedia.org/wiki/Arcadia_Unified_School_District</li>
+<li>https://fh.ausd.net</li>
+<li>https://www.ausd.net/apps/pages/FoothillsNationalBlueRibbon</li>
+<li>https://townsquarepublications.com/arcadia-history/</li>
+<li>https://www.cde.ca.gov/sdprofile/details.aspx?cds=19642616061246</li>
+<li>https://california.hometownlocator.com/schools/profiles,n,foothills%20middle,z,91006,t,pb,i,1013677.cfm</li>
+<li>https://fh.ausd.net/apps/news/category/10224?pageIndex=2</li>
+<li>https://www.greatschools.org/california/arcadia/1469-Foothills-Middle-School/</li>
+</ul>
+<hr />
+<h2>CONFIDENCE: High</h2>
+<p>Both sources are closely aligned on all major dimensions: identity (grades 6-8, AUSD, 171 E. Sycamore), enrollment (~640–685), demographics (majority Asian ~63%, Hispanic ~18%, White ~10%), National Blue Ribbon (2022), strong academic performance (~70-75% math/reading proficiency, historical 977 API), and Gifted &amp; Talented program. Grok provides significantly richer detail — principal name, rankings, test scores, student-teacher ratio, AVID, mental health initiatives, and an extensive club list. Perplexity corroborates the core facts and adds one unique facility finding (fault line discovery). Minor variances in enrollment and English Learner counts are attributable to different data snapshots and are not material contradictions.</p>
+<hr />
+<h2>GAPS</h2>
+<ul>
+<li><strong>Fault line impact</strong>: Perplexity mentions the school was found to be built on a large fault that impacted remodeling — but no details on resolution, safety implications, or current status. This is a potentially significant facilities concern that neither source investigates further.</li>
+<li><strong>Athletics detail</strong>: Grok mentions athletics are offered but provides no specific sports, teams, or competitive results. Perplexity provides none.</li>
+<li><strong>Music program detail</strong>: Both sources mention music facilities (music building) but no specifics on band, orchestra, choir, or performance achievements. Given the strong music program at feeder school Arcadia High, the middle school music pipeline is an important gap.</li>
+<li><strong>Feeder pattern detail</strong>: Foothills feeds into Arcadia High School, but neither source explicitly discusses the transition, articulation, or college-readiness pipeline from middle to high school.</li>
+<li><strong>Club completeness</strong>: Grok provides a club list but notes it's student-driven and changes yearly — the list is illustrative, not comprehensive for any given year.</li>
+<li><strong>Teacher quality metrics</strong>: Niche grades are cited (A+ for teachers) but no specific teacher retention data, credential breakdown, or diversity statistics.</li>
+<li><strong>COVID impact</strong>: No discussion of pandemic-era remote learning, learning loss, or recovery efforts — notable for a high-performing school with English Learners and economically disadvantaged students.</li>
+<li><strong>Competitive academic teams</strong>: Unlike Arcadia High School (which has extensive Academic Decathlon, Science Olympiad, etc.), neither source documents whether Foothills fields competitive academic teams.</li>
+<li><strong>School-specific history</strong>: No founding date for Foothills specifically — Perplexity notes AUSD was founded in 1952 but that may be the district, not the school. The actual opening date of Foothills Middle School is not documented in either source.</li>
+<li><strong>No school-level funding data</strong>: Per-pupil spending at the school level not provided.</li>
+</ul>
 
         <footer class="footer">
-          <p>Document compiled from multiple research sources for nuclear weapons policy analysis. All sources are cited with their original URLs and dates.</p>
-          <p><strong>Analysis Focus:</strong> Nuclear deterrence, escalation dynamics, and policy implications for global security.</p>
+          <p>Oracle Research — Foothills Middle School, Arcadia CA</p>
         </footer>
       </div>
     </main>
   </div>
 
   <script>
-    // Simple JavaScript for active section highlighting in TOC
     document.addEventListener('DOMContentLoaded', function() {
       const sections = document.querySelectorAll('.section');
       const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
-      
-      // Function to update active TOC links based on scroll position
+
       function updateActiveLink() {
         let current = '';
-        
+
         sections.forEach(section => {
           const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          
           if (pageYOffset >= sectionTop - 100) {
             current = section.getAttribute('id');
           }
         });
-        
+
         tocLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href').substring(1) === current) {
+          if (link.getAttribute('href') === '#' + current) {
             link.classList.add('active');
           }
         });
       }
-      
+
       window.addEventListener('scroll', updateActiveLink);
-      updateActiveLink(); // Initial call
+      updateActiveLink();
     });
   </script>
 </body>
